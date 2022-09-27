@@ -136,7 +136,7 @@ func sliceAtoi(str []string) ([]int, error) {
 	lines 165 & 167 is from https://www.youtube.com/watch?v=8Epy35neq9M (4m55s)
 */
 func createTCPServer(PORT string) {
-	// Listen function creates the server
+	// Listen announces on the local network address
 	l, err := net.Listen("tcp", PORT)
 	if err != nil {
 		fmt.Println(err)
@@ -180,7 +180,7 @@ func createTCPClient(inputMessage Message, delay []int) {
 	destinationID := inputMessage.destinationID
 	destinationAddress := inputMessage.destinationAddress
 
-	// The Dial function connects to the server
+	// Dial connects to the address on the named network
 	c, err := net.Dial("tcp", CONNECT)
 	if err != nil {
 		fmt.Println(err)
